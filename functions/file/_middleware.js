@@ -10,6 +10,7 @@ const errorHandler = async ({ next }) => {
 const cors = async ({ next }) => {
     const response = await next(); 
     response.headers.set('Access-Control-Allow-Origin', '*'); 
+    response.headers.set('X-Hello', 'Hello from functions Middleware!');
     return response;
 };
 
